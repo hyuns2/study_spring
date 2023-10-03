@@ -2,15 +2,22 @@ package study.kyh.principle1.order;
 
 import study.kyh.principle1.discount.DiscountPolicy;
 import study.kyh.principle1.discount.FixDiscountPolicy;
+import study.kyh.principle1.discount.RateDiscountPolicy;
 import study.kyh.principle1.member.Member;
 import study.kyh.principle1.member.MemberRepository;
 import study.kyh.principle1.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
 
+    private final MemberRepository memberRepository;
+    // private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    // private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    private final DiscountPolicy discountPolicy;
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
