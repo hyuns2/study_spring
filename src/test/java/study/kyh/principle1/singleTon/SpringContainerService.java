@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import study.kyh.principle1.AppConfig;
 import study.kyh.principle1.member.MemberService;
 
-public class springContainerService {
+public class SpringContainerService {
 
     @Test
     @DisplayName("스프링 컨테이너와 싱글톤")
