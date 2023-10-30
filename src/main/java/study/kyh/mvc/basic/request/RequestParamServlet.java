@@ -1,4 +1,4 @@
-package study.kyh.mvc.basic;
+package study.kyh.mvc.basic.request;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
