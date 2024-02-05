@@ -11,26 +11,27 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import study.kyh.db.domain.Member;
-import study.kyh.db.repository.MemberRepositoryV3;
+import study.kyh.db.repository.MemberRepository;
+import study.kyh.db.repository.MemberRepositoryV4_1;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @Slf4j
 @SpringBootTest
-public class MemberServiceV3_4Test {
+public class MemberServiceV4Test {
 
     public static final String MEMBER_A = "memberA";
     public static final String MEMBER_B = "memberB";
     public static final String MEMBER_EX = "ex";
 
     @Autowired
-    private MemberServiceV3_3 memberService;
+    private MemberServiceV4 memberService;
     @Autowired
-    private MemberRepositoryV3 memberRepository;
+    private MemberRepository memberRepository;
 
     @AfterEach
-    void after() throws SQLException {
+    void after() {
         memberRepository.delete(MEMBER_A);
         memberRepository.delete(MEMBER_B);
         memberRepository.delete(MEMBER_EX);
@@ -45,13 +46,13 @@ public class MemberServiceV3_4Test {
         }
 
         @Bean
-        MemberRepositoryV3 memberRepositoryV3() {
-            return new MemberRepositoryV3(dataSource);
+        MemberRepository memberRepository() {
+            return new MemberRepositoryV4_1(dataSource);
         }
 
         @Bean
-        MemberServiceV3_3 memberServiceV3_3() {
-            return new MemberServiceV3_3(memberRepositoryV3());
+        MemberServiceV4 memberServiceV4() {
+            return new MemberServiceV4(memberRepository());
         }
     }
 
@@ -66,7 +67,7 @@ public class MemberServiceV3_4Test {
 
     @Test
     @DisplayName("정상 이체")
-    void accountTransfer() throws SQLException {
+    void accountTransfer() {
         // given
         Member memberA = new Member(MEMBER_A, 10000);
         Member memberB = new Member(MEMBER_B, 10000);
@@ -86,7 +87,7 @@ public class MemberServiceV3_4Test {
 
     @Test
     @DisplayName("이체 중 예외 발생")
-    void accountTransferEx() throws SQLException {
+    void accountTransferEx() {
         // given
         Member memberA = new Member(MEMBER_A, 10000);
         Member memberEx = new Member(MEMBER_EX, 10000);
