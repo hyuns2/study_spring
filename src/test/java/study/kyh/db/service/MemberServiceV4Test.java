@@ -14,6 +14,7 @@ import study.kyh.db.domain.Member;
 import study.kyh.db.repository.MemberRepository;
 import study.kyh.db.repository.MemberRepositoryV4_1;
 import study.kyh.db.repository.MemberRepositoryV4_2;
+import study.kyh.db.repository.MemberRepositoryV5;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -49,7 +50,8 @@ public class MemberServiceV4Test {
         @Bean
         MemberRepository memberRepository() {
             // return new MemberRepositoryV4_1(dataSource);
-            return new MemberRepositoryV4_2(dataSource);
+            // return new MemberRepositoryV4_2(dataSource);
+            return new MemberRepositoryV5(dataSource);
         }
 
         @Bean
