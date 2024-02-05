@@ -1,4 +1,4 @@
-package study.kyh.db.repository;
+package study.kyh.db.repository.ex;
 
 public class MyDbException extends RuntimeException{
 

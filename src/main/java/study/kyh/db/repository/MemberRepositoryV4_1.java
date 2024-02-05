@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.jdbc.support.JdbcUtils;
 import study.kyh.db.domain.Member;
+import study.kyh.db.repository.ex.MyDbException;
 
 import javax.sql.DataSource;
 import java.sql.*;
