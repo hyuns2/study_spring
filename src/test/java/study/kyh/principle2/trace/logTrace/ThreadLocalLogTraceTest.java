@@ -1,12 +1,13 @@
 package study.kyh.principle2.trace.logTrace;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import study.kyh.principle2.trace.TraceStatus;
-import study.kyh.principle2.trace.helloTrace.HelloTraceV2;
 
-public class FieldLogTraceTest {
+@Slf4j
+public class ThreadLocalLogTraceTest {
 
-    FieldLogTrace trace = new FieldLogTrace();
+    ThreadLocalLogTrace trace = new ThreadLocalLogTrace();
 
     @Test
     void begin_end_level2() {
