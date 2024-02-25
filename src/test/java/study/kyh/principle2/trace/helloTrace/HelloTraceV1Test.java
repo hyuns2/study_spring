@@ -1,3 +1,5 @@
+package study.kyh.principle2.trace.helloTrace;
+
 import org.junit.jupiter.api.Test;
 import study.kyh.principle2.trace.TraceStatus;
 import study.kyh.principle2.trace.helloTrace.HelloTraceV1;
