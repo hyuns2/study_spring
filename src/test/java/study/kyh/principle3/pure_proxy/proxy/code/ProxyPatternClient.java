@@ -1,4 +1,4 @@
-package study.kyh.principle3.pureProxy.proxy.code;
+package study.kyh.principle3.pure_proxy.proxy.code;
 
 public class ProxyPatternClient {
     private Subject subject;
