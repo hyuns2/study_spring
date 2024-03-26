@@ -1,6 +1,6 @@
 package study.kyh.principle3.trace.log_trace;
 
-import study.kyh.principle2.trace.TraceStatus;
+import study.kyh.principle3.trace.TraceStatus;
 
 public interface LogTrace {
 
