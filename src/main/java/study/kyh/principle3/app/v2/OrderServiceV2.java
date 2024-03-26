@@ -1,5 +1,8 @@
 package study.kyh.principle3.app.v2;
 
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 public class OrderServiceV2 {
     private final OrderRepositoryV2 orderRepository;
 
