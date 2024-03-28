@@ -2,7 +2,7 @@ package study.kyh.principle3.jdk_dynamic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import study.kyh.principle2.jdk_dynamic.code.*;
+import study.kyh.principle3.jdk_dynamic.code.*;
 
 import java.lang.reflect.Proxy;
 
